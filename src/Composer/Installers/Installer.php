@@ -42,6 +42,7 @@ class Installer extends LibraryInstaller
         'drupal'       => 'DrupalInstaller',
         'elgg'         => 'ElggInstaller',
         'eliasis'      => 'EliasisInstaller',
+        'eancms'      =>  'EancmsInstaller',
         'ee3'          => 'ExpressionEngineInstaller',
         'ee2'          => 'ExpressionEngineInstaller',
         'ezplatform'   => 'EzPlatformInstaller',

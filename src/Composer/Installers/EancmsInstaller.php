@@ -6,7 +6,7 @@ class EancmsInstaller extends BaseInstaller
 {
     /** @var array<string, string> */
     protected $locations = array(
-        'module' => 'Modules/{$name}/'
+        'module' => 'app/Modules/{$name}/'
     );
 
     /**
