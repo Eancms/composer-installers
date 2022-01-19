@@ -8,7 +8,8 @@ class EancmsInstaller extends BaseInstaller
     protected $locations = array(
         'modules' => 'app/{$name}/',
         'module' => 'app/Modules/{$name}/',
-        'deep-module' => 'app/Modules/{$name}/'
+        'deep-module' => 'app/Modules/{$name}/',
+        'data' => 'data/{$name}/',
     );
 
     /**
@@ -20,6 +21,10 @@ class EancmsInstaller extends BaseInstaller
     {
 
         if ($vars['type'] === 'eancms-modules') {
+            return $this->inflectPluginVars($vars);
+        }
+
+        if ($vars['type'] === 'eancms-data') {
             return $this->inflectPluginVars($vars);
         }
 
