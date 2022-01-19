@@ -25,7 +25,7 @@ class EancmsInstaller extends BaseInstaller
         }
 
         if ($vars['type'] === 'eancms-data') {
-            return $this->inflectPluginVars($vars);
+            return $this->inflectPluginVarsData($vars);
         }
 
         if ($vars['type'] === 'eancms-module') {
@@ -48,6 +48,15 @@ class EancmsInstaller extends BaseInstaller
         $vars['name'] = $this->pregReplace('/-module$/', '', $vars['name']);
         $vars['name'] = str_replace(array('-', '_'), ' ', $vars['name']);
         $vars['name'] = str_replace(' ', '', ucwords($vars['name']));
+
+        return $vars;
+    }
+
+    protected function inflectPluginVarsData(array $vars): array
+    {
+//        $vars['name'] = $this->pregReplace('/-module$/', '', $vars['name']);
+//        $vars['name'] = str_replace(array('-', '_'), ' ', $vars['name']);
+//        $vars['name'] = str_replace(' ', '-', $vars['name']);
 
         return $vars;
     }
