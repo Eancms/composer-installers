@@ -10,6 +10,7 @@ class EancmsInstaller extends BaseInstaller
         'module' => 'app/Modules/{$name}/',
         'deep-module' => 'app/Modules/{$name}/',
         'data' => 'data/{$name}/',
+        'assets' => 'resources/assets/{$name}/',
     );
 
     /**
@@ -25,6 +26,10 @@ class EancmsInstaller extends BaseInstaller
         }
 
         if ($vars['type'] === 'eancms-data') {
+            return $this->inflectPluginVarsData($vars);
+        }
+
+        if ($vars['type'] === 'eancms-assets') {
             return $this->inflectPluginVarsData($vars);
         }
 
